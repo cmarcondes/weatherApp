@@ -8,7 +8,7 @@ import { StackNavigator } from 'react-navigation';
 
 class Home extends React.Component {
   static navigationOptions = {
-    title: 'Welcome',
+    title: 'Weather for Amsterdam',
   };
   render() {
     const { navigate } = this.props.navigation;
