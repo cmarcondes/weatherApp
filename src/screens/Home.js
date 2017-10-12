@@ -4,7 +4,8 @@ import {
   Text,
   Button
 } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+
+import Card from '../components/Card';
 
 class Home extends React.Component {
   static navigationOptions = {
@@ -14,15 +15,13 @@ class Home extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View>
-        <Text>Hello, Home!</Text>
-        <Button
+        <Card 
+          title='Activiteitenweer'
           onPress={() => navigate('Activity')}
-          title="Go to activity"
         />
       </View>
     );
   }
 }
-
 
 export default Home;
