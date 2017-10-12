@@ -2,7 +2,8 @@ import React from 'react';
 import {
   View,
   Text,
-  Button
+  Image,
+  ScrollView,
 } from 'react-native';
 
 import Card from '../components/Card';
@@ -18,7 +19,26 @@ class Home extends React.Component {
         <Card 
           title='Activiteitenweer'
           onPress={() => navigate('Activity')}
-        />
+        >
+          <ScrollView horizontal>
+            <View>
+              <Text>Barbecue</Text>
+              <Image source={require('../assets/images/bbq.png')} />
+            </View>
+            <View>
+              <Text>Fietsen</Text>
+              <Image source={require('../assets/images/bike.png')} />
+            </View>
+            <View>
+              <Text>Tennis</Text>
+              <Image source={require('../assets/images/tennis.png')} />
+            </View>
+            <View>
+              <Text>Drinken</Text>
+              <Image source={require('../assets/images/terrace.png')} />
+            </View>
+          </ScrollView>
+        </Card>
       </View>
     );
   }

@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     fontSize: 16,
-    color: '#ccc',
+    color: 'rgb(133, 137, 140)',
     textAlign: 'center',
   },
   cardBody: {
