@@ -59,7 +59,7 @@ class RatingGRaph extends Component {
     this.createColumn = this.createColumn.bind(this);
   }
   createColumn(data) {
-    // let time = data.time;
+    let time = data.time;
     // if(data.time === moment().minute(0).format('HH:mm')) {
     //   time = 'nu';
     // }
