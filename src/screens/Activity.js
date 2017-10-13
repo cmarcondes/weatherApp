@@ -18,6 +18,7 @@ import forecast1Day from '../static/forecast1day';
 const styles = StyleSheet.create({
   today__container: {
     justifyContent: 'center',
+    backgroundColor: '#fff',
   },
   today: {
     fontSize: 12,
@@ -134,7 +135,7 @@ class Activity extends React.Component {
   }
   render() {
     return (
-      <ScrollView>
+      <ScrollView style={{ backgroundColor:'#fff' }}>
         <View style={[styles.today__container, styles.borderBottom]}>
           <Text style={styles.today}>Vandaag</Text>
         </View>
