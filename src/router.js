@@ -1,4 +1,4 @@
-import { Easing, Animated } from 'react-native';
+import { StatusBar } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import Home from './screens/Home';
 import Activity from './screens/Activity';
@@ -11,6 +11,7 @@ export const Router = StackNavigator({
   navigationOptions: {
     headerStyle: {
       backgroundColor: '#1685e8',
+      marginTop: StatusBar.currentHeight,
     },
     headerTitleStyle: {
       color: '#fff'
@@ -21,3 +22,4 @@ export const Router = StackNavigator({
     headerTintColor: "#fff"
   },
 });
+
