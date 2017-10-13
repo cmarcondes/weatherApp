@@ -4,7 +4,8 @@ import {
   Section,
   StyleSheet,
   View,
-  Image
+  Image,
+  ScrollView
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import Accordion from 'react-native-collapsible/Accordion';
@@ -74,7 +75,7 @@ class Activity extends React.Component {
   }
   render() {
     return (
-      <View>
+      <ScrollView>
         <View style={[ styles.today__container, styles.borderBottom ]}>
           <Text style={styles.today}>Vandaag</Text>
         </View>
@@ -82,8 +83,9 @@ class Activity extends React.Component {
           sections={activities}
           renderHeader={this._renderHeader}
           renderContent={this._renderContent}
+          underlayColor='#0282EB'
         />
-      </View>
+      </ScrollView>
     );
   }
 }
