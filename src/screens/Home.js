@@ -43,6 +43,10 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     const forecast = forecast1Day[0];
+    const sortedActivities = activities.map(activity => {
+      activity.rating = forecast[`activity_digit_${activity.id}`];
+      return activity;
+    }).sort((a1, a2) => a2.rating - a1.rating);
     return (
       <View>
         <Card 
@@ -51,26 +55,15 @@ class Home extends React.Component {
         >
           <ScrollView horizontal>
             <View style={styles.container}>
-              <View style={styles.col}>
-                <Text>Barbecue</Text>
-                <Image source={require('../assets/images/bbq.png')} />
-                <Rating value={forecast1Day[0][`activity_digit_${activities[0].id}`]} />
-              </View>
-              <View style={styles.col}>
-                <Text>Fietsen</Text>
-                <Image source={require('../assets/images/cycling.png')} />
-                <Rating value={forecast[`activity_digit_${activities[2].id}`]} />
-              </View>
-              <View style={styles.col}>
-                <Text>Tennis</Text>
-                <Image source={require('../assets/images/tennis.png')} />
-                <Rating value={forecast[`activity_digit_${activities[3].id}`]} />
-              </View>
-              <View style={styles.col}>
-                <Text>Drinken</Text>
-                <Image source={require('../assets/images/terrace.png')} />
-                <Rating value={forecast[`activity_digit_${activities[1].id}`]} />
-              </View>
+              {sortedActivities.slice(0,4).map((activity, index)=>{
+                return (
+                <View style={styles.col} key={index}>
+                  <Text>{activity.name}</Text>
+                  <Image source={activity.icon} style={styles.icon} />
+                  <Rating value={forecast[`activity_digit_${activity.id}`]} />
+                </View>
+                );
+              })}
             </View>
           </ScrollView>
         </Card>

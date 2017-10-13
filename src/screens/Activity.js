@@ -89,7 +89,7 @@ class Activity extends React.Component {
       <View style={[styles.container]}>
         <View style={[styles.row, (!isActive && styles.borderBottom)]}>
           <Text style={styles.headerText}>{activity.name}</Text>
-          <Image source={activity.icon} style={styles.icon}></Image>
+          <Image source={activity.icon} style={styles.icon} />
           <Rating value={activity.rating} />
         </View>
       </View>
