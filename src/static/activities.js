@@ -1,5 +1,5 @@
 const activities = [
-  { id: 'bbq', name: 'Barbacue', icon: require('../assets/images/bbq.png')},
+  { id: 'bbq', name: 'Barbecue', icon: require('../assets/images/bbq.png')},
   { id: 'cycling', name: 'Fietsen', icon: require('../assets/images/cycling.png')},
   { id: 'golf', name: 'Golf', icon: require('../assets/images/golf.png')},
   { id: 'camping', name: 'Camper', icon: require('../assets/images/camping.png')},

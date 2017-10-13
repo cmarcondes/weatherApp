@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({
+const _styles = StyleSheet.create({
   container: {
     width: 28,
     height: 28,
@@ -13,6 +13,8 @@ const styles = StyleSheet.create({
   },
   value: {
     backgroundColor: 'transparent',
+    color: 'white',
+    fontWeight: 'bold',
   },
   r_: { backgroundColor: 'transparent'},
   r_1: { backgroundColor: '#4F4F47' },
@@ -29,13 +31,13 @@ const styles = StyleSheet.create({
 
 class Rating extends Component {
   static propTypes = {
-    value: PropTypes.number,
+    value: PropTypes.number.isRequired,
   };
 
   render() {
     return (
-      <View style={[styles.container, styles[`r_${this.props.value}`]]}>
-        <Text style={styles.value}>{this.props.value}</Text>
+      <View style={[_styles.container, _styles[`r_${this.props.value}`], this.props.style]}>
+        <Text style={_styles.value}>{this.props.value}</Text>
       </View>
     );
   }
