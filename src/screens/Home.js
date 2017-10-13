@@ -33,16 +33,13 @@ class Home extends React.Component {
   static navigationOptions = {
     title: 'Weather for Amsterdam',
   };
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition((position) => {
-      /*
-      we have to call: https://service.weeronline.cloud/geodata/v1/6/1/nl/52.360/4.893
-      "latitude": 52.3606941,
-      "longitude": 4.8938012,
-      To get the city_id.
-      */
-    });
-  }
+
+  static navigationOptions = (props) => {
+    return {
+      title: `${props.screenProps.location.city_name}`,
+    }
+  };
+
   render() {
     const { navigate } = this.props.navigation;
     const forecast = forecast1Day[0];
